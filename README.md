@@ -1,2 +1,0 @@
-# golf-marketplace
-New readme
