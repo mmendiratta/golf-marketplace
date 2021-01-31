@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-// import { CreateIcon } from '../assets/images/CreateIcon';
+//import { CreateIcon } from '../assets/images/CreateIcon';
 //import golfField from "../assets/images/homeGolfField.png";
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -25,28 +25,28 @@ export default function BottomTabNavigator() {
         name="Home"
         component={HomeScreenNavigator}
         options={{
-          tabBarIcon: ( color: string ) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ( color: string ) => <TabBarIcon name="home" color="white" />,
         }}
       />
       <BottomTab.Screen
         name="Shop"
         component={ShopScreenNavigator}
         options={{
-          tabBarIcon: (color: string) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: (color: string) => <TabBarIcon name="search-sharp" color="white" />,
         }}
       />
       <BottomTab.Screen
         name="Sell"
         component={SellScreenNavigator}
         options={{
-          tabBarIcon: (color: string) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: (color: string) => <TabBarIcon name="pricetag-sharp" color="white" />,
         }}
       />
        <BottomTab.Screen
         name="Account"
         component={AccountScreenNavigator}
         options={{
-          tabBarIcon: (color: string) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: (color: string) => <TabBarIcon name="person-sharp" color="white" />,
         }}
       />
     </BottomTab.Navigator>
@@ -55,7 +55,7 @@ export default function BottomTabNavigator() {
 
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
-function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
+function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: any }) {
   return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
 }
 
