@@ -8,22 +8,6 @@ import { Card, ListItem, Button, Icon, Image} from 'react-native-elements';
 import { ScrollView } from 'react-native';
 import { ProductCarousel } from '../../product/ProductCarousel';
 
- 
-// const CarouselCardItem = () => {
-//   return (
-//     carouselItems.map((item) => {
-//       return (
-//         <Card>
-//           <Card.Title>{item.title}</Card.Title>
-//           <Card.FeaturedSubtitle>{item.text}</Card.FeaturedSubtitle>
-//         </Card>
-//       )
-//     })
-//   )
-// }
-
- 
-
 export default function HomeScreen() {
   return (
     <>

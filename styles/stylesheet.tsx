@@ -2,6 +2,10 @@ import { StyleSheet } from 'react-native';
 import { ITEM_WIDTH } from '../constants/Dimensions';
 
 export const styles = StyleSheet.create({
+  image: {
+    width: ITEM_WIDTH,
+    height: 300,
+  },
 carouselContainer: {
     alignItems: 'center',
     justifyContent: 'center',
