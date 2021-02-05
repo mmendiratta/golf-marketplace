@@ -10,7 +10,8 @@ import HomeScreen from '../screens/home/HomeScreen';
 import ShopScreen from '../screens/shop/ShopScreen';
 import SellScreen from '../screens/sell/SellScreen';
 import AccountScreen from '../screens/account/AccountScreen';
-import { BottomTabParamList, HomeScreenParamList, AccountScreenParamList, ShopScreenParamList, SellScreenParamList } from '../types';
+import { BottomTabParamList, HomeScreenParamList, AccountScreenParamList, ShopScreenParamList, SellScreenParamList, CreateListingParamList } from '../types';
+import CreateListingScreen from '../screens/createListing/CreateListingScreen';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -25,8 +26,9 @@ export default function BottomTabNavigator() {
         name="Home"
         component={HomeScreenNavigator}
         options={{
-          tabBarIcon: ( color: string ) => <TabBarIcon name="home" color="white" />,
+          tabBarIcon: ( color: string ) => <TabBarIcon name="golf" color="white" />,
         }}
+        // options={{ tabBarIcon: ( color: string) => <i source/> }}
       />
       <BottomTab.Screen
         name="Shop"
@@ -35,8 +37,15 @@ export default function BottomTabNavigator() {
           tabBarIcon: (color: string) => <TabBarIcon name="search-sharp" color="white" />,
         }}
       />
+       <BottomTab.Screen
+        name="Create"
+        component={CreateListingScreenNavigator}
+        options={{
+          tabBarIcon: (color: string) => <TabBarIcon name="add-circle-outline" color="white" />,
+        }}
+      />
       <BottomTab.Screen
-        name="Sell"
+        name="Selling"
         component={SellScreenNavigator}
         options={{
           tabBarIcon: (color: string) => <TabBarIcon name="pricetag-sharp" color="white" />,
@@ -65,6 +74,7 @@ const HomeScreenStack = createStackNavigator<HomeScreenParamList>();
 const AccountScreenStack = createStackNavigator<AccountScreenParamList>();
 const ShopScreenStack = createStackNavigator<ShopScreenParamList>();
 const SellScrenStack = createStackNavigator<SellScreenParamList>();
+const CreateListingScreenStack = createStackNavigator<CreateListingParamList>();
 
 function HomeScreenNavigator() {
   return (
@@ -111,5 +121,17 @@ function SellScreenNavigator() {
         options={{ headerTitle: 'Sell Screen' }}
       />
     </SellScrenStack.Navigator>
+  );
+}
+
+function CreateListingScreenNavigator() {
+  return (
+    <CreateListingScreenStack.Navigator>
+      <CreateListingScreenStack.Screen
+        name="CreateListingScreen"
+        component={CreateListingScreen}
+        options={{ headerTitle: 'Create New Listing' }}
+      />
+    </CreateListingScreenStack.Navigator>
   );
 }

@@ -6,7 +6,8 @@ export type RootStackParamList = {
 export type BottomTabParamList = {
   Home: undefined;
   Shop: undefined;
-  Sell: undefined;
+  Create: undefined;
+  Selling: undefined;
   Account: undefined;
 };
 
@@ -25,4 +26,8 @@ export type ShopScreenParamList = {
 
 export type SellScreenParamList = {
   SellScreen: undefined;
+};
+
+export type CreateListingParamList = {
+  CreateListingScreen: undefined;
 };
