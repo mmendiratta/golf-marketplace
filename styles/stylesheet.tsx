@@ -44,14 +44,17 @@ carouselContainer: {
   title: {
     fontSize: 20,
     fontWeight: 'bold',
+    alignSelf: 'flex-start',
+    paddingLeft: 30
   },
   header: {
     fontSize: 16,
     fontWeight: 'normal',
+    color: 'black'
   },
   separator: {
     marginVertical: 30,
-    height: 1,
+    height: 3,
     width: '80%',
   },
 });
