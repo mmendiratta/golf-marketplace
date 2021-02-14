@@ -6,11 +6,13 @@ import {ITEM_WIDTH, SLIDER_WIDTH} from '../../constants/Dimensions';
 import Carousel from 'react-native-snap-carousel';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import { Image, Card } from 'react-native-elements';
-import { ScrollView } from 'react-native';
+import { ScrollView, TouchableHighlight } from 'react-native';
 import { ProductCarousel } from '../../product/ProductCarousel';
+import { TabBarIcon } from '../../navigation/BottomTabNavigator';
 
 
 export default function HomeScreen() {
+  const clubTypes: String[] = ["Putter", "Driver", "Wedges", "Iron Sets", "Single Irons"]
   return (
     <ScrollView>
       <Text style={styles.title}>Featured Items</Text>
@@ -30,19 +32,31 @@ export default function HomeScreen() {
         </Col>
       </Grid>
       <View style={styles.container}>
-        <Text style={styles.title}>Shop By Club</Text>
-        <Card containerStyle={{shadowColor: 'white', width: ITEM_WIDTH, minHeight: 30, paddingBottom: 20,  borderRadius: 10}}> 
-          <Text style={styles.header}>Club 1</Text>
-        </Card>
-        <Card containerStyle={{shadowColor: 'white', width: ITEM_WIDTH, minHeight: 30, paddingBottom: 20,  borderRadius: 10}}> 
-          <Text style={styles.header}>Club 2</Text>
-        </Card>
-        <Card containerStyle={{shadowColor: 'white', width: ITEM_WIDTH, minHeight: 30, paddingBottom: 20,  borderRadius: 10}}> 
-          <Text style={styles.header}>Club 3</Text>
-        </Card>
-        <Card containerStyle={{shadowColor: 'white', width: ITEM_WIDTH, minHeight: 30, paddingBottom: 20,  borderRadius: 10}}> 
-          <Text style={styles.header}>Club 4</Text>
-        </Card>
+      <Text style={styles.title}>Shop By Club</Text>
+        {clubTypes.map((club: String) => {
+          return (
+            <View 
+            // TODO: add styling for arrows 
+            // style={{
+            //   flexDirection: "row",
+            //   justifyContent: "space-between",
+            //   alignItems: "center"}}
+            >
+              <TouchableHighlight onPress={() => {
+                alert('you clicked ' + club);
+              }
+              }>
+                <Card containerStyle={{shadowColor: 'white', width: ITEM_WIDTH, 
+                      minHeight: 30, paddingBottom: 20,  borderRadius: 10, 
+                      flexDirection: "row"}}
+                      > 
+                  <Text style={styles.header}>{club}</Text>
+                  <TabBarIcon name="arrow-forward-sharp" color="black"/>
+                </Card>
+              </TouchableHighlight>
+            </View>
+          )
+        })}
       </View>
    </ScrollView>
   );
