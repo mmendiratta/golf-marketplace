@@ -113,9 +113,11 @@ carouselContainer: {
     flexDirection : 'row',
   },
   infoContent:{
-    flex:1,
-    alignItems:'flex-start',
-    paddingLeft:5
+    flex:8,
+    // alignItems:'flex-start',
+    alignContent: 'center',
+    paddingLeft:5,
+    paddingTop:5,
   },
   iconContent:{
     flex:1,

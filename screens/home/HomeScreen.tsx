@@ -12,7 +12,7 @@ import { TabBarIcon } from '../../navigation/BottomTabNavigator';
 
 
 export default function HomeScreen() {
-  const clubTypes: String[] = ["Putter", "Driver", "Wedges", "Iron Sets", "Single Irons"]
+  const clubTypes: string[] = ["Putter", "Driver", "Wedges", "Iron Sets", "Single Irons"]
   return (
     <ScrollView>
       <Text style={styles.title}>Featured Items</Text>
@@ -33,14 +33,12 @@ export default function HomeScreen() {
       </Grid>
       <View style={styles.container}>
       <Text style={styles.title}>Shop By Club</Text>
-        {clubTypes.map((club: String) => {
+        {clubTypes.map((club: string) => {
           return (
             <View 
             // TODO: add styling for arrows 
-            // style={{
-            //   flexDirection: "row",
-            //   justifyContent: "space-between",
-            //   alignItems: "center"}}
+            style={{flex: 3}}
+            key={club}
             >
               <TouchableHighlight onPress={() => {
                 alert('you clicked ' + club);

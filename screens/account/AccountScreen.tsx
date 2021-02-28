@@ -5,7 +5,8 @@ import {
   Text,
   View,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
+  TouchableHighlight
 } from 'react-native';
 
 export default function AccountScreen() {
@@ -13,7 +14,7 @@ export default function AccountScreen() {
     <View style={styles.container}>
           <View style={styles.accountHeader}></View>
           <Image style={styles.accountAvatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
-          <View style={{marginTop: 80}}>
+          <View style={{marginTop: 30}}>
             <View style={styles.accountContent}>
               {/* <Text style={styles.accountName}>John Doe</Text>
               <Text style={styles.accountInfo}>Software Engineer</Text>
@@ -30,37 +31,53 @@ export default function AccountScreen() {
                 <Text style={styles.userInfo}>Florida </Text>
                <View style={styles.item}>
               <View style={styles.iconContent}>
-                <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/cottage.png'}}/>
+                <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/information.png'}}/>
               </View>
               <View style={styles.infoContent}>
-                <Text style={styles.info}>Home</Text>
+               <TouchableHighlight onPress={() => {
+                  alert('you clicked Account Info');
+                }}>
+                  <Text style={styles.info}>Account Info</Text>
+                </TouchableHighlight>
               </View>
             </View>
 
             <View style={styles.item}>
               <View style={styles.iconContent}>
-                <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/administrator-male.png'}}/>
+                <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/settings.png'}}/>
               </View>
               <View style={styles.infoContent}>
-                <Text style={styles.info}>Settings</Text>
+              <TouchableHighlight onPress={() => {
+                  alert('you clicked SETTINGS');
+                }}>
+                  <Text style={styles.info}>Settings</Text>
+                </TouchableHighlight>
               </View>
             </View>
 
             <View style={styles.item}>
               <View style={styles.iconContent}>
-                <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/filled-like.png'}}/>
+                <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/lock.png'}}/>
               </View>
               <View style={styles.infoContent}>
-                <Text style={styles.info}>News</Text>
+              <TouchableHighlight onPress={() => {
+                  alert('you clicked SECURITY');
+                }}>
+                  <Text style={styles.info}>Security</Text>
+                </TouchableHighlight>
               </View>
             </View>
 
             <View style={styles.item}>
               <View style={styles.iconContent}>
-                <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/facebook-like.png'}}/>
+                <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/shopping-cart.png'}}/>
               </View>
               <View style={styles.infoContent}>
-                <Text style={styles.info}>Shop</Text>
+              <TouchableHighlight onPress={() => {
+                  alert('you clicked SHOP');
+                }}>
+                  <Text style={styles.info}>Shopping History</Text>
+                </TouchableHighlight>
               </View>
             </View>
             </View>
